@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ProjectSimba:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjectSimba_jar</output-path>
+    <root id="archive" name="ProjectSimba.jar">
+      <element id="module-output" name="ProjectSimba" />
+    </root>
+  </artifact>
+</component>
