@@ -48,6 +48,10 @@ public class KeyHandler implements KeyListener {
         // TITLE STATE
         if(gp.gameState == gp.titleState) {
 
+            if(code == KeyEvent.VK_ENTER || code == KeyEvent.VK_E) {
+                gp.playSE(4);
+            }
+
             if(gp.ui.titleScreenState == 0) {
                 if(code == up || code == KeyEvent.VK_UP)
                 {
@@ -157,6 +161,7 @@ public class KeyHandler implements KeyListener {
             }
             if (code == KeyEvent.VK_ESCAPE) {
                 gp.gameState = gp.pauseState;
+                gp.playSE(5);
                 upPressed = false;
                 leftPressed = false;
                 rightPressed = false;
@@ -177,6 +182,7 @@ public class KeyHandler implements KeyListener {
         {
             if (code == KeyEvent.VK_ESCAPE) {
                 gp.gameState = gp.playState;
+                gp.playSE(6);
             }
         }
 
