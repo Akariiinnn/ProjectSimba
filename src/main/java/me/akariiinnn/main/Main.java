@@ -2,6 +2,8 @@ package me.akariiinnn.main;
 
 import javax.swing.*;
 
+// COMMIT TEST
+
 public class Main {
     public static void main(String[] args) {
 
