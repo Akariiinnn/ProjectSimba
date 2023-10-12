@@ -33,18 +33,18 @@ public class NPC_Walker extends Entity{
 
     public void getImage() {
 
-        up1 = setup("/NPC/" + name + "Back1", gp.tileSize, gp.tileSize);
-        up2 = setup("/NPC/" + name + "Back2", gp.tileSize, gp.tileSize);
-        up3 = setup("/NPC/" + name + "Back3", gp.tileSize, gp.tileSize);
-        down1 = setup("/NPC/" + name + "Face1", gp.tileSize, gp.tileSize);
-        down2 = setup("/NPC/" + name + "Face2", gp.tileSize, gp.tileSize);
-        down3 = setup("/NPC/" + name + "Face3", gp.tileSize, gp.tileSize);
-        left1 = setup("/NPC/" + name + "Gauche1", gp.tileSize, gp.tileSize);
-        left2 = setup("/NPC/" + name + "Gauche2", gp.tileSize, gp.tileSize);
-        left3 = setup("/NPC/" + name + "Gauche3", gp.tileSize, gp.tileSize);
-        right1 = setup("/NPC/" + name + "Droite1", gp.tileSize, gp.tileSize);
-        right2 = setup("/NPC/" + name + "Droite2", gp.tileSize, gp.tileSize);
-        right3 = setup("/NPC/" + name + "Droite3", gp.tileSize, gp.tileSize);
+        up1 = setup("/npc/" + name + "Back1", gp.tileSize, gp.tileSize);
+        up2 = setup("/npc/" + name + "Back2", gp.tileSize, gp.tileSize);
+        up3 = setup("/npc/" + name + "Back3", gp.tileSize, gp.tileSize);
+        down1 = setup("/npc/" + name + "Face1", gp.tileSize, gp.tileSize);
+        down2 = setup("/npc/" + name + "Face2", gp.tileSize, gp.tileSize);
+        down3 = setup("/npc/" + name + "Face3", gp.tileSize, gp.tileSize);
+        left1 = setup("/npc/" + name + "Gauche1", gp.tileSize, gp.tileSize);
+        left2 = setup("/npc/" + name + "Gauche2", gp.tileSize, gp.tileSize);
+        left3 = setup("/npc/" + name + "Gauche3", gp.tileSize, gp.tileSize);
+        right1 = setup("/npc/" + name + "Droite1", gp.tileSize, gp.tileSize);
+        right2 = setup("/npc/" + name + "Droite2", gp.tileSize, gp.tileSize);
+        right3 = setup("/npc/" + name + "Droite3", gp.tileSize, gp.tileSize);
     }
 
     public void setDialogues() {

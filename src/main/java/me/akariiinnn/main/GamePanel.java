@@ -212,7 +212,7 @@ public class GamePanel extends JPanel implements Runnable{
     public void playSE(int i) {
 
         se.setFile(i);
-        System.out.println(se.soundURL[i]);
+        System.out.println(se.soundURL[i].getFile().substring(se.soundURL[i].getFile().lastIndexOf("/")+1));
         se.play();
     }
 }
