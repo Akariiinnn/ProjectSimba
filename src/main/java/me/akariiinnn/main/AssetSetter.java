@@ -2,6 +2,7 @@ package me.akariiinnn.main;
 
 import me.akariiinnn.entity.NPC_Walker;
 import me.akariiinnn.objects.OBJ_Boots;
+import me.akariiinnn.objects.OBJ_Chest;
 import me.akariiinnn.objects.OBJ_Door;
 import me.akariiinnn.objects.OBJ_HondFlag;
 
@@ -19,9 +20,6 @@ public class AssetSetter {
         gp.obj[0].worldX = gp.tileSize*18;
         gp.obj[0].worldY = gp.tileSize*17;
 
-        gp.obj[1] = new OBJ_Boots(gp);
-        gp.obj[1].worldX = gp.tileSize*23;
-        gp.obj[1].worldY = gp.tileSize*18;
 
     }
 
