@@ -1,5 +1,6 @@
 package me.akariiinnn.main;
 
+import me.akariiinnn.entity.ENEMY_Slime;
 import me.akariiinnn.entity.NPC_Walker;
 import me.akariiinnn.objects.OBJ_Boots;
 import me.akariiinnn.objects.OBJ_Chest;
@@ -29,5 +30,13 @@ public class AssetSetter {
         gp.npc[0].worldX = gp.tileSize*21;
         gp.npc[0].worldY = gp.tileSize*19;
         gp.npc[0].collisionOn = true;
+    }
+
+    public void setEnemies() {
+
+        gp.enemies[0] = new ENEMY_Slime(gp);
+        gp.enemies[0].worldX = gp.tileSize*18;
+        gp.enemies[0].worldY = gp.tileSize*20;
+        gp.enemies[0].collisionOn = true;
     }
 }
