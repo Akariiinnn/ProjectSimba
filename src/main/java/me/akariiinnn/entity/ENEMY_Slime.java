@@ -6,14 +6,16 @@ import java.awt.*;
 import java.util.Random;
 
 public class ENEMY_Slime extends Entity{
+    public int baseSpeed;
     public ENEMY_Slime(GamePanel gp) {
         super(gp);
 
         direction = "left";
 
-        this.speed = 2;
+        this.speed = 1;
         this.width = gp.tileSize;
         this.height = gp.tileSize;
+        baseSpeed = speed;
         solidArea = new Rectangle(4, 8, 8, 8);
         solidArea.x = solidArea.x * gp.scale;
         solidArea.y = solidArea.y * gp.scale;
@@ -44,29 +46,72 @@ public class ENEMY_Slime extends Entity{
     public void setAction() {
 
         actionLockCounter++;
-        if (actionLockCounter > 30) {
+        if (actionLockCounter > 90) {
             Random rand = new Random();
             int n = rand.nextInt(5);
-            System.out.println(n);
 
-            // Make the slime move towards player if player in range
-            //if(playerInRange(gp.player)) {
-            //    if(gp.player.worldX > worldX) {direction = "right";}
-            //    if(gp.player.worldX < worldX) {direction = "left";}
-            //    if(gp.player.worldY > worldY) {direction = "down";}
-            //    if(gp.player.worldY < worldY) {direction = "up";}
-            //    System.out.println(direction);
-            //}
-            //else {
-                switch (n) {
-                    case 0: direction = "up"; break;
-                    case 1: direction = "down"; break;
-                    case 2: direction = "left"; break;
-                    case 3: direction = "right"; break;
-                    case 4: speed = 0; break;
+            // Makes the slime move towards the player vertically, horizontally and diagonally
+            /*if (playerInRange(gp.player)) {
+                if (gp.player.worldX - worldX > 0) {
+                    if (gp.player.worldY - worldY > 0) {
+                        direction = "down";
+                    } else if (gp.player.worldY - worldY < 0) {
+                        direction = "up";
+                    } else {
+                        direction = "right";
+                    }
+                } else if (gp.player.worldX - worldX < 0) {
+                    if(gp.player.worldY - worldY > 0) {
+                        direction = "down";
+                    } else if (gp.player.worldY - worldY < 0) {
+                        direction = "up";
+                    } else {
+                        direction = "left";
+                    }
+                } else if (gp.player.worldY - worldY > 0) {
+                    if(gp.player.worldX - worldX > 0) {
+                        direction = "right";
+                    } else if (gp.player.worldX - worldX < 0) {
+                        direction = "left";
+                    } else {
+                        direction = "down";
+                    }
+                } else if (gp.player.worldY - worldY < 0) {
+                    if(gp.player.worldX - worldX > 0) {
+                        direction = "right";
+                    } else if (gp.player.worldX - worldX < 0) {
+                        direction = "left";
+                    } else {
+                        direction = "up";
+                    }
                 }
+            }
+            else {*/
+                switch (n) {
+                    case 0:
+                        speed = baseSpeed;
+                        direction = "up";
+                        break;
+                    case 1:
+                        speed = baseSpeed;
+                        direction = "down";
+                        break;
+                    case 2:
+                        speed = baseSpeed;
+                        direction = "left";
+                        break;
+                    case 3:
+                        speed = baseSpeed;
+                        direction = "right";
+                        break;
+                    case 4:
+                        speed = 0;
+                        break;
+                }
+
+                System.out.println(direction);
+                actionLockCounter = 0;
             //}
-            actionLockCounter = 0;
         }
     }
 

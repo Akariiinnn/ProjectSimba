@@ -73,7 +73,7 @@ public class Player extends Entity{
         //CHECK NPC COLLISION
         int npcIndex = gp.cHandler.checkEntity(this, gp.npc);
         interactNPC(npcIndex);
-
+        gp.cHandler.checkEntity(this, gp.enemies);
 
         if (keyH.upPressed || keyH.downPressed ||
                 keyH.leftPressed || keyH.rightPressed) {
@@ -251,6 +251,7 @@ public class Player extends Entity{
         }
 
         g2.drawImage(image, screenX, screenY, null);
+        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
 
     }
 }

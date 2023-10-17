@@ -147,6 +147,7 @@ public class Entity {
                     break;
             }
             g2.drawImage(image, screenX, screenY, this.width, this.height, null);
+            g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
         }
     }
 
