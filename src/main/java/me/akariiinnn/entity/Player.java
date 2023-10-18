@@ -12,6 +12,8 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
 
+    public int invincibilityFrames = 0;
+
     public boolean hasBoots = false;
 
     public Player(GamePanel gp, KeyHandler keyH)
@@ -72,8 +74,25 @@ public class Player extends Entity{
 
         //CHECK NPC COLLISION
         int npcIndex = gp.cHandler.checkEntity(this, gp.npc);
+        int enemyIndex = gp.cHandler.checkEntity(this, gp.enemies);
         interactNPC(npcIndex);
-        gp.cHandler.checkEntity(this, gp.enemies);
+        interactENEMY(enemyIndex);
+
+        if(keyH.ePressed && enemyIndex != 999)
+        {
+            //if player is next to an enemy by a third of a tileSize, attack it
+            if(gp.enemies[enemyIndex] instanceof ENEMY_Slime)
+            {
+                if(gp.enemies[enemyIndex].worldX - worldX < gp.tileSize/3 && gp.enemies[enemyIndex].worldX - worldX > -gp.tileSize/3)
+                {
+                    if(gp.enemies[enemyIndex].worldY - worldY < gp.tileSize/3 && gp.enemies[enemyIndex].worldY - worldY > -gp.tileSize/3)
+                    {
+                        gp.enemies[enemyIndex] = null;
+                        System.out.println(gp.enemies[enemyIndex].life);
+                    }
+                }
+            }
+        }
 
         if (keyH.upPressed || keyH.downPressed ||
                 keyH.leftPressed || keyH.rightPressed) {
@@ -163,6 +182,30 @@ public class Player extends Entity{
                 spriteCounter = 0;
             }
         }
+
+        if(invincibilityFrames > 0)
+        {
+            invincibilityFrames++;
+        }
+        if(invincibilityFrames == 60)
+        {
+            invincibilityFrames = 0;
+        }
+        System.out.println(invincibilityFrames);
+    }
+
+    private void interactENEMY(int enemyIndex) {
+
+            if(enemyIndex != 999) {
+                if(gp.enemies[enemyIndex] instanceof ENEMY_Slime) {
+                    if(invincibilityFrames == 0)
+                    {
+                        this.life -= 1;
+                        System.out.println(this.life);
+                        invincibilityFrames++;
+                    }
+                }
+            }
     }
 
     private void interactNPC(int i) {
