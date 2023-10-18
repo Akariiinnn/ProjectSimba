@@ -191,7 +191,6 @@ public class Player extends Entity{
         {
             invincibilityFrames = 0;
         }
-        System.out.println(invincibilityFrames);
     }
 
     private void interactENEMY(int enemyIndex) {
