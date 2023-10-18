@@ -199,7 +199,7 @@ public class Player extends Entity{
                 if(gp.enemies[enemyIndex] instanceof ENEMY_Slime) {
                     if(invincibilityFrames == 0)
                     {
-                        this.life -= 1;
+                        this.life -= gp.enemies[enemyIndex].damages;
                         System.out.println(this.life);
                         invincibilityFrames++;
                     }

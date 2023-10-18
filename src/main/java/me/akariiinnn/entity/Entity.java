@@ -30,6 +30,8 @@ public class Entity {
     int howManyDialogues = 0;
     public int width, height;
 
+    public int damages;
+
     // CHARACTER STATUS
     public int maxLife;
     public int life;

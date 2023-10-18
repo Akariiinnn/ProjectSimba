@@ -7,6 +7,7 @@ import java.util.Random;
 
 public class ENEMY_Slime extends Entity{
     public int baseSpeed;
+
     public ENEMY_Slime(GamePanel gp) {
         super(gp);
 
@@ -15,6 +16,7 @@ public class ENEMY_Slime extends Entity{
         this.speed = 1;
         this.width = gp.tileSize;
         this.height = gp.tileSize;
+        this.damages = 1;
         baseSpeed = speed;
         solidArea = new Rectangle(4, 8, 8, 8);
         solidArea.x = solidArea.x * gp.scale;
